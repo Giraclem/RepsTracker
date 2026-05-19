@@ -1,11 +1,17 @@
 const bodyEl = document.querySelector("body");
 
-const navbarhtml = fetch("../Pages/Components/navbar.html")
+const base = location.pathname.includes("/Pages/") ? "../" : "./";
+const navbarPath = `${base}Pages/Components/navbar.html`;
+
+const navbarhtml = fetch(navbarPath)
     .then((response) =>{
         return response.text()
     })
     .then((txt) =>{
         const el = document.createElement("div"); //Converting txt into node
+
+        txt = txt.replaceAll("{{BASE}}", base);
+
         el.innerHTML = txt;
         for (const node of el.children){
             if (node.nodeName === "SCRIPT") {

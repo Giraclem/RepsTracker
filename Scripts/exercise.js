@@ -32,7 +32,7 @@ const enableSaveOnUnload = (object) =>{
 }
 
 // Getting current session/exercise information
-import { currSession } from "/Scripts/sessionsStorage.js";
+import { currSession } from "../Scripts/sessionsStorage.js";
 currSession.load();
 
 let currExercise;
