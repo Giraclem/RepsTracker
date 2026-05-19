@@ -1,0 +1,61 @@
+.parameters {
+    background-color: var(--surface-color);
+    padding:15px;
+    border-radius: 15px;
+    border:1px solid var(--border-color);
+}
+
+.themes{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.themes select{
+    padding:10px;
+    border: none;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    text-align: center;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: base-select;
+}
+
+.themes ::picker(select) {
+    appearance: base-select;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+}
+
+.themes option{
+    cursor: pointer;
+}
+
+.themes option:hover{
+    background-color: var(--primary-color);
+    color:var(--surface-color);
+}
+
+.sample_loading{
+    display: grid;
+}
+
+.sample_loading button{
+    border: 1px solid var(--primary-color);
+    margin:10px;
+    padding:10px;
+
+    border-radius: 15px;
+    font-size: 1.1rem;
+
+    background-color: var(--bg-color);
+    color:var(--primary-color);
+}
+
+.sample_loading button.highlighted {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercise</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="../Style/main.css" />
+        <link rel="stylesheet" href="../Style/exercise.css" />
+        <link rel="stylesheet" href="../Style/form.css" />
+        <link rel="stylesheet" href="../Style/pastSession.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="exercise-title">JS Error</h1>
+        </header>
+        <main>
+            <h2 >Current serie : <span id="curr_serie">1</span>/<span class="total_series">3</span></h2>
+            <div class="panel-container">
+                <div class="panel-nav">
+                    <ul>
+                        <li id="serie"  class="current_panel">Serie</li>
+                        <li id="tips">Tips</li> 
+                    </ul>
+                </div>
+                <div class="panel" id="panel_serie">
+                    <div id="recup_timer">
+                        <span class="minute">00</span>:<span class="second">00</span>
+                    </div>
+                    <fieldset id="serie_form">
+                        <div class="field">
+                            <label for="repetitions">Repetitions</label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="12" id="repetitions" name="repetitions" step="1" min="0" max="100">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="weight">
+                                <p>Weight
+                                    <span class="unit-selection">
+                                        (<select name="weight_unit" id="weight_unit">
+                                            <option value="kg">kg</option>
+                                            <option value="lbs">lbs</option>
+                                            <option value="kgx2">kg(x2)</option>
+                                            <option value="lbsx2">lbs(x2)</option>
+                                        </select>)
+                                    </span>
+                                </p>
+                            </label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="0" name="weight" id="weight" step="1" min="0" max="999">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="previous_series">
+                    </div>
+                    <button id="next_exercises_btn" class="next_exercises_btn">
+                        Next series
+                    </button>
+                    <button id="skip_timer_btn" class="next_exercises_btn">
+                        Skip
+                    </button>
+                </div>
+                <div class="panel hidden" id="panel_tips">
+                    <div class="video">
+                    </div>
+                    <div class="separator">
+                    </div>
+                    <h2 class="tips-title">Tips</h2>
+                    <div class="tips">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script type="module" src="/Scripts/exercise.js"></script>
+        <script src="/Scripts/Form/stepButton.js"></script>
+    </body>
+</html>

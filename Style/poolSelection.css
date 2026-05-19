@@ -1,0 +1,95 @@
+.pool_container{
+    display: grid;
+}
+
+.pool {
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.pool h2{
+    font-weight: 500;
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
+.exercise{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    margin:10px 0 10px 0;
+    border-radius: 15px;
+    border:1px solid var(--border-color);
+}
+
+.exercise_name{
+    position: absolute;
+    height: 20px;
+    width: 75%;
+    margin:0;
+    padding:10px;
+    border-bottom-right-radius: 15px;
+    z-index: 1;
+    background-color:color-mix(in srgb, var(--primary-color) 80%, transparent); /*rgba(0, 122, 255, 0.8)*/
+    color:var(--surface-color);
+}
+
+.exercise_img{
+    height: 100%;
+    overflow: hidden;
+}  
+
+.exercise_img img {
+    width:100%;
+    transform-origin: center;
+    transform: translateY(-10%);
+}
+
+.checkbox{
+    display: none;
+}
+
+/* Completed pools*/
+
+.completed *{
+    display: none;
+}
+
+.completed .checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    border-radius: 12.5px;
+    width: 25px;
+    height: 25px;
+
+    background-color: var(--primary-color);
+}
+
+.completed .checkbox img{
+    display: block;
+    width: 50%;
+    filter: brightness(0) invert(1);
+}
+
+.stop_session{
+    background-color: var(--primary-color);
+    color:var(--bg-color);
+    border : 1px solid var(--border-color);
+    width:150px;
+    padding:10px 15px;
+    border-radius: 15px;
+    margin-bottom:15px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    font-size: 1.1rem;
+}

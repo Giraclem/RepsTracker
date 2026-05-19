@@ -1,0 +1,131 @@
+/* exercise list*/
+
+.session_thumbnail{
+    max-width:450px;
+    border-radius: 20px;
+    border:1px solid var(--border-color);
+    background-color: var(--surface-color);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.session_thumbnail a{
+    text-decoration: none;
+    height: 100%;
+    display: grid;
+    grid-template-rows:1fr auto;
+}
+
+.session_thumbnail_img{
+    height: 140px;
+    overflow: hidden;
+    background-color: var(--border-color);
+}
+
+.session_thumbnail_img img{
+    width:100%;
+}
+
+.session_thumbnail .thumbnail-bottom{
+    display:grid;
+    grid-template-columns: 1fr auto auto;
+    gap:10px;
+
+    align-items: center;
+    
+    color:var(--text-color);
+
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.session_thumbnail h1 {
+    font-size: 1.5rem;
+}
+
+.session_thumbnail .edit_btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border:none;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.session_thumbnail .edit_btn:active {
+    background-color: var(--primary-color);
+}
+
+.edit_btn img{
+    width:75%;
+}
+
+.session_thumbnail .delete_btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border:none;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete_btn img{
+    width:75%;
+}
+
+.session_thumbnail .delete_btn:active {
+    background-color: var(--primary-color);
+}
+
+
+.thumbnail-expand {
+    border-top :1px solid var(--border-color);
+    padding:20px;
+}
+
+.thumbnail-btn {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap : 20px;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pool_list ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.pool{
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.ex_list{
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.see-more{
+    color: var(--text-color);
+    font-style: italic;
+    text-align: center;
+    margin:0;
+}
+
+.hidden{
+    display: none;
+}
+
+.play_btn {
+    border : none;
+    border-radius: 15px;
+
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    font-weight: bold;
+}

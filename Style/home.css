@@ -1,0 +1,42 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:15px;
+}
+
+.section-card{
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding:0 15px 0 15px;
+    border-radius: 15px;
+
+    
+}
+
+.section-card h2{
+    font-size: 1.2rem;
+}
+
+.section-card ul{
+    padding:0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.section-card li{
+    border: 1px solid var(--primary-color);
+    margin:10px;
+    padding:10px;
+
+    border-radius: 15px;
+    font-size: 1.1rem;
+
+    background-color: var(--bg-color);
+    color:var(--primary-color);
+}
+
+
+.section-card li.highlighted {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}

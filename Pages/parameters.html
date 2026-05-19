@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parameters</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="/Style/main.css" />
+        <link rel="stylesheet" href="/Style/home.css" />
+        <link rel="stylesheet" href="/Style/parameters.css" />
+    </head>
+    <body>
+        <main>
+            <div class="parameters">
+                <h1>Parameters</h1>
+                <div class="separator">
+                <form class="themes">
+                    <label for="theme">Theme</label>
+                    <select id="theme">
+                        <!-- Filled by parameters.js -->
+                    </select>
+                </form>
+                <div class="separator"></div>
+                <div class="sample_loading">
+                    <button id="load_default_exercises">Load default exercises sample</button>
+                    <button id="load_default_sessions">Load default sessions sample</button>
+                </div>
+            </div>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script type="module" src="/Scripts/parameters.js"></script>
+    </body>
+</html>

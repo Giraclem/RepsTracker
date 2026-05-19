@@ -1,0 +1,126 @@
+
+
+/* exercises */
+
+.exercise-title{
+    margin-left: 15px;
+}
+
+.panel-container{
+    background-color: var(--surface-color);
+    border:1px solid var(--border-color);
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+
+}
+
+.panel {
+    display: grid;
+    grid-template-rows:1fr auto;
+    justify-items: center;
+    align-items: center;
+    padding:15px 0 15px 0;
+}
+
+.panel.hidden{
+    display: none;
+}
+
+.panel fieldset{
+    border:none;
+}
+
+.panel-nav{
+    width: 100%;
+}
+
+.panel-nav ul{
+    margin:0;
+    padding:0;
+    display: flex;
+}
+
+.panel-nav li{
+    color:var(--border-color);
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    padding:10px;
+    border-bottom: var(--border-color) 1px solid;
+    background-color: var(--bg-color);
+}
+.panel-nav li.current_panel{
+    border-bottom:none;
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;;
+}
+.panel-nav li:first-of-type{
+    border-right:var(--border-color) 1px solid;
+}
+.panel-nav li:last-of-type{
+    border-left:var(--border-color) 1px solid;
+}
+
+.next_exercises_btn{
+    color:var(--surface-color);
+    background-color: var(--primary-color);
+    
+    height:50px;
+    width:50%;
+    min-width: none;
+    box-sizing: border-box;
+
+    border-radius: 15px;
+    border: 1px solid  var(--border-color);
+
+    padding:15px 10px 15px 10px;
+    font-size:1rem;
+
+    margin-top:15px;
+}
+
+.panel fieldset{
+    border-top-left-radius: 0px;
+}
+
+.panel .video{
+    width:300px;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.panel .video img{
+    width: 100%;
+}
+
+.tips ul{
+    padding-inline-start:0;
+}
+
+#serie_form{
+    display: block;
+    margin-bottom:0;
+}
+
+#recup_timer{
+    font-size:5rem;
+    display: none;
+}
+
+#skip_timer_btn{
+    display:none;
+}
+
+.tips-title{
+    margin-bottom: 0;
+    width: 100%;
+    padding-left:45px;
+}
+
+#panel_serie{
+    min-height:400px;
+}

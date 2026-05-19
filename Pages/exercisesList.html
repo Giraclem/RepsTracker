@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercises List</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="../Style/main.css" />
+        <link rel="stylesheet" href="../Style/exercisesList.css" />
+    </head>
+    <body>
+        <main>
+            <div class="list_container">
+            </div>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script src="/Scripts/exerciseList_display.js" type="module"></script>
+    </body>
+</html>

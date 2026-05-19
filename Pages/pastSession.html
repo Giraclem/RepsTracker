@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>History</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="/Style/main.css" />
+        <link rel="stylesheet" href="/Style/home.css" />
+        <link rel="stylesheet" href="/Style/pastSession.css" />
+    </head>
+    <body>
+        <h1 class="title">Past session</h1>
+        <main>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script type="module" src="/Scripts/pastSession.js"></script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Session</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="../Style/main.css" />
+        <link rel="stylesheet" href="../Style/form.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Edit</h1>
+            <form id="new_session_form" >
+                <fieldset>
+                    <legend>General information</legend>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="Session name" id="name" name="name">
+                    </div>
+                    <div class="separator"></div>
+                    <div class="large_field">
+                        <label for="categories">Categories</label>
+                        <div class="entry_with_button">
+                            <input type="text" placeholder="add a category" id="add_category" name="add_category">
+                            <button class="add_category_btn">+</button>
+                        </div>
+                        <select name="categories" id="categories" multiple class="selection_entry" hidden>
+
+                        </select>
+                        <ul class="categories_holder selected_options">
+
+                        </ul>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="large_field">
+                        <label for="img_src">Image</label>
+                        <input type="url" placeholder="url" id="img_src" name="img_src">
+                    </div>
+                </fieldset>
+                <fieldset class="pools">
+                    <legend>Pools</legend>
+                    <button class="new_pool_btn">Create new pool</button>
+                </fieldset>
+                <input type="submit" value="Edit" id="Edit"/>
+            </form>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script type="module" src="/Scripts/editSession.js"></script>
+        <script type="module" src="/Scripts/Form/multipleSelection.js"></script>
+    </body>
+</html>

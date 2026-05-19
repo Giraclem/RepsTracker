@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Exercise</title>
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme.toLowerCase());
+        </script>
+        <link rel="stylesheet" href="/Style/main.css" />
+        <link rel="stylesheet" href="/Style/form.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Create an exercise</h1>
+            <form id="new_exercise_form" >
+                <fieldset>
+                    <legend>General information</legend>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="exercise name" id="name" name="name">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Configuration</legend>
+                        <div class="field">
+                            <label for="series">Series</label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="3" id="series" name = "series" step="1" min="0" max="100">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="repetitions">Repetitions</label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="12" id="repetitions" name="repetitions" step="1" min="0" max="100">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="weight">
+                                <p>Weight
+                                    <span class="unit-selection">
+                                        (<select name="weight_unit" id="weight_unit">
+                                            <option value="kg">kg</option>
+                                            <option value="lbs">lbs</option>
+                                            <option value="kgx2">kg(x2)</option>
+                                            <option value="lbsx2">lbs(x2)</option>
+                                        </select>)
+                                    </span>
+                                </p>
+                            </label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="0" id="weight" name="weight" step="1" min="0" max="999">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="recup_time">
+                                <p>Recuperation
+                                    <span class="unit-selection">
+                                        (<select name="recup_time_unit" id="recup_time_unit" min="0" max="999">
+                                            <option value="sec">sec</option>
+                                            <option value="min">min</option>
+                                        </select>)
+                                    </span>
+                                </p>
+                            </label>
+                            <div class="number_entry">
+                                <button class="step_btn minus">-</button>
+                                <input type="number" value="120" id="recup_time" name="recup_time" step="5" min="0" max="999">
+                                <button class="step_btn plus">+</button>
+                            </div>
+                        </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Information</legend>
+                    <div class="large_field">
+                        <label for="muscles">Muscles</label>
+                        <select name="muscles" id="muscles" multiple class="selection_entry">
+                            <optgroup label="Chest">
+                                <option value="Chest">Chest</option>
+                            </optgroup>
+
+                            <optgroup label="Back">
+                                <option value="Lats">Lats</option>
+                                <option value="Traps">Traps</option>
+                                <option value="Rhomboids">Rhomboids</option>
+                                <option value="Teres Major">Teres Major</option>
+                                <option value="Lower Back">Lower Back</option>
+                            </optgroup>
+
+                            <optgroup label="Shoulders">
+                                <option value="Front Delt">Front Delt</option>
+                                <option value="Side Delt">Side Delt</option>
+                                <option value="Rear Delt">Rear Delt</option>
+                                <option value="Rotator Cuff">Rotator Cuff</option>
+                            </optgroup>
+
+                            <optgroup label="Arms">
+                                <option value="Biceps">Biceps</option>
+                                <option value="Triceps">Triceps</option>
+                                <option value="Brachialis">Brachialis</option>
+                                <option value="Brachioradialis">Brachioradialis</option>
+                                <option value="Forearms">Forearms</option>
+                            </optgroup>
+
+                            <optgroup label="Abs & Core">
+                                <option value="Abs">Abs</option>
+                                <option value="Obliques">Obliques</option>
+                                <option value="Transverse">Transverse</option>
+                            </optgroup>
+
+                            <optgroup label="Legs">
+                                <option value="Quadriceps">Quadriceps</option>
+                                <option value="Hamstrings">Hamstrings</option>
+                                <option value="Glutes">Glutes</option>
+                                <option value="Calves">Calves</option>
+                                <option value="Adductors">Adductors</option>
+                                <option value="Abductors">Abductors</option>
+                            </optgroup>
+
+                        </select>
+                        <ul class="selected_options">
+                        </ul>
+                    </div>
+                    <div class="large_field">
+                        <label for="tips">Tips</label>
+                        <textarea id="tips" name="tips"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset id="media">
+                    <legend>Media</legend>
+                    <div class="large_field">
+                        <label for="img_src">Image</label>
+                        <div class="link_entry">
+                            <input type="url" placeholder="url" id="img_src" name="img_src">
+                            <button hidden>+</button>
+                        </div>
+                    </div>
+                    <div class="large_field">
+                        <label for="vid_src">Video</label>
+                        <div class="link_entry">
+                            <input type="url" placeholder="url" id="vid_src" name="vid_src">
+                            <button hidden>+</button>   
+                        </div>                  
+                    </div>
+                </fieldset>
+                <input type="submit" value="Create" id="submit"/>
+            </form>
+        </main>
+        <script src="/Scripts/Components/navbar.js"></script>
+        <script src="/Scripts/Form/stepButton.js"></script>
+        <script src="/Scripts/Form/multipleSelection.js" type="module"></script>
+        <script src="/Scripts/addExercise.js" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+/* exercise list*/
+
+.exercise_thumbnail{
+    height:200px;
+    max-width:450px;
+    border-radius: 20px;
+    border:1px solid var(--border-color);
+    background-color: var(--surface-color);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.exercise_thumbnail a{
+    text-decoration: none;
+    height: 100%;
+    display: grid;
+    grid-template-rows:1fr auto;
+}
+
+.exercise_thumbnail_img{
+    overflow: hidden;
+    background-color: var(--border-color);
+}
+
+.exercise_thumbnail_img img{
+    width:100%;
+}
+
+.exercise_thumbnail .thumbnail-bottom{
+    display:grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap:10px;
+
+    align-items: center;
+    
+    color:var(--text-color);
+
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.thumbnail-bottom h1 {
+    font-size: 1.5rem;
+}
+
+.edit_btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border:none;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_btn:active {
+    background-color: var(--primary-color);
+}
+
+.edit_btn img{
+    width:75%;
+}
+
+.delete_btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border:none;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete_btn img{
+    width:75%;
+}
+
+.delete_btn:active {
+    background-color: var(--primary-color);
+}
