@@ -1,6 +1,6 @@
 //Themes
 
-import {themeList, updateThemeDisplay, readTheme} from "/Scripts/Utilities/theme.js"
+import {themeList, updateThemeDisplay, readTheme} from "../Scripts/Utilities/theme.js"
 
 const themeSelectEl = document.querySelector("#theme");
 const currentTheme = readTheme()
@@ -32,8 +32,8 @@ const changeTheme = (theme) => {
 
 // Import samples
 
-import {loadDefaultExercise} from "/Scripts/loadSamples.js"
-import {displaySucceedBox,displayErrorBox} from "/Scripts/Utilities/popup.js"
+import {loadDefaultExercise} from "../Scripts/loadSamples.js"
+import {displaySucceedBox,displayErrorBox} from "../Scripts/Utilities/popup.js"
 
 const handleLoadExerciseClick = async () => {
     const succeed = await loadDefaultExercise();
@@ -48,7 +48,7 @@ const loadExerciseBtnEl = document.querySelector("#load_default_exercises");
 loadExerciseBtnEl.addEventListener("click", handleLoadExerciseClick)
 
 
-import {loadDefaultSessions} from "/Scripts/loadSamples.js"
+import {loadDefaultSessions} from "../Scripts/loadSamples.js"
 
 const handleLoadSessionClick = async () => {
     const succeed = await loadDefaultSessions();

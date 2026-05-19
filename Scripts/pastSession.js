@@ -1,6 +1,6 @@
-import {pastSessionHistory} from "/Scripts/historyStorage.js";
+import {pastSessionHistory} from "../Scripts/historyStorage.js";
 pastSessionHistory.load();
-import {createSeriesTable} from "/Scripts/Utilities/seriesTable.js";
+import {createSeriesTable} from "../Scripts/Utilities/seriesTable.js";
 
 
 const createExerciseCard = (exercise,exerciseNumber) =>{

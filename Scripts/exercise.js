@@ -1,9 +1,9 @@
-import {readForm} from "/Scripts/Form/readform.js"
-import {textToListEl} from "/Scripts/Utilities/textToList.js"
-import { loadExImage } from "/Scripts/Utilities/loadExImage.js";
-import {pastSessionHistory} from "/Scripts/historyStorage.js";
+import {readForm} from "../Scripts/Form/readForm.js"
+import {textToListEl} from "../Scripts/Utilities/textToList.js"
+import { loadExImage } from "../Scripts/Utilities/loadExImage.js";
+import {pastSessionHistory} from "../Scripts/historyStorage.js";
 pastSessionHistory.load();
-import {createSeriesTable} from "/Scripts/Utilities/seriesTable.js";
+import {createSeriesTable} from "../Scripts/Utilities/seriesTable.js";
 
 // Managing Panel switching during exercises
 const panelNavEl = document.querySelectorAll(".panel-nav li");
@@ -181,10 +181,10 @@ const finishExercise = () =>{
     finishSerie();
     if(sessionMode){
         currSession.finish_exercise();
-        window.location.href = "/Pages/session.html"
+        window.location.href = "session.html"
     } else {
         sessionStorage.removeItem("currExercise");
-        window.location.href = "/index.html"
+        window.location.href = "../index.html"
     }
 }
 

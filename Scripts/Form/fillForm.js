@@ -1,4 +1,4 @@
-import {highlightSelectedoptions} from "/Scripts/Form/multipleSelection.js";
+import {highlightSelectedoptions} from "../../Scripts/Form/multipleSelection.js";
 
 const fillSelect = (selectEl,selectedOptionEl, list) => {
 

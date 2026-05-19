@@ -1,7 +1,7 @@
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import {Exercise, exerciseList} from "/Scripts/exerciseStorage.js"
-import {exLimitsValue} from "/Scripts/exerciseStorage.js"
-import {readForm} from "/Scripts/Form/readForm.js"
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
+import {Exercise, exerciseList} from "../Scripts/exerciseStorage.js"
+import {exLimitsValue} from "../Scripts/exerciseStorage.js"
+import {readForm} from "../Scripts/Form/readForm.js"
 exerciseList.load();
 
 // Getting UI elements 

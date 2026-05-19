@@ -1,5 +1,3 @@
-
-
 const bodyEl = document.querySelector("body");
 
 const navbarhtml = fetch("../Pages/Components/navbar.html")
@@ -23,5 +21,5 @@ const navbarhtml = fetch("../Pages/Components/navbar.html")
         }
     })
     .catch((error)=>{
-        console.log(`Error whiling fetching navbar : ${error}`);
+        console.warn(`Error whiling fetching navbar : ${error}`);
     });

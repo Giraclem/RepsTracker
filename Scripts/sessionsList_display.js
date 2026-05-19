@@ -1,7 +1,7 @@
-import {loadExImage} from "/Scripts/Utilities/loadExImage.js";
-import {exerciseList} from "/Scripts/exerciseStorage.js"
+import {loadExImage} from "../Scripts/Utilities/loadExImage.js";
+import {exerciseList} from "../Scripts/exerciseStorage.js"
 exerciseList.load();
-import {sessionsList, CurrentSession} from "/Scripts/sessionsStorage.js"
+import {sessionsList, CurrentSession} from "../Scripts/sessionsStorage.js"
 sessionsList.load();
 
 const containerEl = document.querySelector(".list_container");
@@ -18,7 +18,7 @@ const poolToText = (pool) =>{
 const startSession = (sess) => {
     const currSess = new CurrentSession(sess);
     currSess.save();
-    window.location.href = "/Pages/session.html";
+    window.location.href = "session.html";
 }
 
 const  displaySessList = (contEl) => {

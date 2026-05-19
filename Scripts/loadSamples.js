@@ -1,11 +1,11 @@
 
 // Exercises
-import { exerciseList,Exercise } from "/Scripts/exerciseStorage.js";
+import { exerciseList,Exercise } from "../Scripts/exerciseStorage.js";
 exerciseList.load();
 
 export const loadDefaultExercise = async () => {
     try {
-        const response = await fetch("/Scripts/sampleExercises.json");
+        const response = await fetch("../Scripts/sampleExercises.json");
         const defaultEx = await response.json();
         defaultEx.forEach((ex)=>{
             const newEx = new Exercise();
@@ -22,9 +22,9 @@ export const loadDefaultExercise = async () => {
 }
 
 
-import {Session} from "/Scripts/sessionsStorage.js";
-import {ExercisePool} from "/Scripts/sessionsStorage.js";
-import { sessionsList } from "/Scripts/sessionsStorage.js";
+import {Session} from "../Scripts/sessionsStorage.js";
+import {ExercisePool} from "../Scripts/sessionsStorage.js";
+import { sessionsList } from "../Scripts/sessionsStorage.js";
 sessionsList.load();
 
 export const loadDefaultSessions = () => {
@@ -87,7 +87,7 @@ export const loadDefaultSessions = () => {
         session.id = "default_session_1";
         session.name = "Upper body sessions";
         session.categories = ["Basic fit", "Upper body"];
-        session.img_src = "/Image/devellopécouché.jpg"
+        session.img_src = "../Image/devellopécouché.jpg"
         
         for (const p of pools){
             const pool = new ExercisePool(p.name);

@@ -1,8 +1,8 @@
 
-import {exerciseList} from "/Scripts/exerciseStorage.js";
-import {loadExImage} from "/Scripts/Utilities/loadExImage.js";
-import {currSession} from "/Scripts/sessionsStorage.js";
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
+import {exerciseList} from "../Scripts/exerciseStorage.js";
+import {loadExImage} from "../Scripts/Utilities/loadExImage.js";
+import {currSession} from "../Scripts/sessionsStorage.js";
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
 currSession.load();
 exerciseList.load();
 
@@ -48,7 +48,7 @@ const createExTbBtmEl = (contEl, ex) => {
         "../Image/edit.png",
         (e)=>{
             sessionStorage.setItem("exerciseToEdit",JSON.stringify(ex));
-            window.location.href = "editexercise.html"
+            window.location.href = "editExercise.html"
 
             e.preventDefault(); // Prevent anchor default behavior
             e.stopPropagation();

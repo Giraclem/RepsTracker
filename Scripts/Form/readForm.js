@@ -1,6 +1,6 @@
-import {Session, ExercisePool} from "/Scripts/sessionsStorage.js"
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import { exerciseList } from "/Scripts/exerciseStorage.js";
+import {Session, ExercisePool} from "../../Scripts/sessionsStorage.js"
+import {displayErrorBox} from "../../Scripts/Utilities/popup.js"
+import { exerciseList } from "../../Scripts/exerciseStorage.js";
 exerciseList.load();
 
 export const readForm = (allInputEl) => {

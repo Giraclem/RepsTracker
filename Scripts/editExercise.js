@@ -1,7 +1,7 @@
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import {readForm} from "/Scripts/Form/readForm.js"
-import {fillForm, exToFormData} from "/Scripts/Form/fillForm.js"
-import {Exercise, exerciseList} from "/Scripts/exerciseStorage.js"
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
+import {readForm} from "../Scripts/Form/readForm.js"
+import {fillForm, exToFormData} from "../Scripts/Form/fillForm.js"
+import {Exercise, exerciseList} from "../Scripts/exerciseStorage.js"
 exerciseList.load();
 
 const exerciseToEdit = JSON.parse(sessionStorage.getItem("exerciseToEdit"));

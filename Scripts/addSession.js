@@ -1,11 +1,11 @@
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import {exerciseList} from "/Scripts/exerciseStorage.js"
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
+import {exerciseList} from "../Scripts/exerciseStorage.js"
 exerciseList.load();
-import {sessionsList } from "/Scripts/sessionsStorage.js";
+import {sessionsList } from "../Scripts/sessionsStorage.js";
 sessionsList.load();
-import {highlightSelectedoptions} from "/Scripts/Form/multipleSelection.js"
-import { readForm, formDataToSess} from "/Scripts/Form/readForm.js";
-import {addPoolEntry} from "/Scripts/Form/addPoolEntry.js"
+import {highlightSelectedoptions} from "../Scripts/Form/multipleSelection.js"
+import { readForm, formDataToSess} from "../Scripts/Form/readForm.js";
+import {addPoolEntry} from "../Scripts/Form/addPoolEntry.js"
 
 
 const addCategoryBtnEl = document.querySelector(".add_category_btn");

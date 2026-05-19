@@ -1,5 +1,5 @@
-import { exerciseList } from "/Scripts/exerciseStorage.js";
-import {pastSessionHistory} from "/Scripts/historyStorage.js";
+import { exerciseList } from "../Scripts/exerciseStorage.js";
+import {pastSessionHistory} from "../Scripts/historyStorage.js";
 pastSessionHistory.load()
 
 export class Session{

@@ -1,5 +1,5 @@
-import { exerciseList } from "/Scripts/exerciseStorage.js";
-import {addSelectionInteractions} from "/Scripts/Form/multipleSelection.js"
+import { exerciseList } from "../../Scripts/exerciseStorage.js";
+import {addSelectionInteractions} from "../../Scripts/Form/multipleSelection.js"
 
 let numberOfPools = 0;
 export const addPoolEntry = (contEl,createPoolBtnEl) => {

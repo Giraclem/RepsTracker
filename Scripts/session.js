@@ -1,8 +1,8 @@
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import {loadExImage} from "/Scripts/Utilities/loadExImage.js";
-import {currSession} from "/Scripts/sessionsStorage.js";
-import {exerciseList} from "/Scripts/exerciseStorage.js";
-import {pastSessionHistory} from "/Scripts/historyStorage.js";
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
+import {loadExImage} from "../Scripts/Utilities/loadExImage.js";
+import {currSession} from "../Scripts/sessionsStorage.js";
+import {exerciseList} from "../Scripts/exerciseStorage.js";
+import {pastSessionHistory} from "../Scripts/historyStorage.js";
 exerciseList.load();
 currSession.load();
 pastSessionHistory.load();
@@ -10,7 +10,7 @@ pastSessionHistory.load();
 const stopSession = () => {
     currSession.finish_session();
     // Add message pop up to say sessions finished
-    window.location.href = "/index.html"
+    window.location.href = "../index.html"
 }
 
 const createExCard = (exId) => {
@@ -51,7 +51,7 @@ const startExercise = (exId, poolId) => {
     currSession.select(poolId,exId);
     currSession.save();
 
-    window.location.href = "/Pages/exercise.html";
+    window.location.href = "exercise.html";
 }
 
 const createPoolCard = (pool) =>{
@@ -59,7 +59,7 @@ const createPoolCard = (pool) =>{
     // Title & Checkbox
 
     const checkImgEl = document.createElement("img");
-    checkImgEl.src="/Image/Interface/check.png"
+    checkImgEl.src="../Image/Interface/check.png"
     const checkSpanEl = document.createElement("span");
     checkSpanEl.classList.add("checkbox");
     checkSpanEl.appendChild(checkImgEl);

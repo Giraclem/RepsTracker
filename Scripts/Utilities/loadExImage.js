@@ -5,7 +5,7 @@ export async function loadExImage(url) {
         imgEl.onload = () => resolve(imgEl);
         imgEl.onerror = () => {
             const defaultImgEl = document.createElement("img");
-            defaultImgEl.src = "../image/no_image.jpg";
+            defaultImgEl.src = "../Image/no_image.jpg";
             return resolve(defaultImgEl);
         };
 

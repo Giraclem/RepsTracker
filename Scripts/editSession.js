@@ -1,8 +1,8 @@
-import {displayErrorBox} from "/Scripts/Utilities/popup.js"
-import {readForm, formDataToSess} from "/Scripts/Form/readForm.js"
-import {fillForm, sessToFormData} from "/Scripts/Form/fillForm.js"
-import { addPoolEntry } from "/Scripts/Form/addPoolEntry.js";
-import { sessionsList } from "/Scripts/sessionsStorage.js";
+import {displayErrorBox} from "../Scripts/Utilities/popup.js"
+import {readForm, formDataToSess} from "../Scripts/Form/readForm.js"
+import {fillForm, sessToFormData} from "../Scripts/Form/fillForm.js"
+import { addPoolEntry } from "../Scripts/Form/addPoolEntry.js";
+import { sessionsList } from "../Scripts/sessionsStorage.js";
 sessionsList.load();
 
 const sessionToEdit = JSON.parse(sessionStorage.getItem("sessionToEdit"));

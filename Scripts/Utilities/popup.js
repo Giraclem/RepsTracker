@@ -59,7 +59,7 @@ export const displayErrorBox = (msg) => {
                         font_color:"black",
                         bg_color:"rgba(255, 163, 168, 0.95)",
                         border_color:"red",
-                        img_src : "/Image/Interface/cross.png"                              
+                        img_src : "../Image/Interface/cross.png"                              
                     }
                 );
 }
@@ -70,7 +70,7 @@ export const displaySucceedBox = (msg) => {
                         font_color:"black",
                         bg_color:"rgba(178, 255, 163, 0.95)",
                         border_color:"green",
-                        img_src : "/Image/Interface/check.png"                              
+                        img_src : "../Image/Interface/check.png"                              
                     }
                 );
 }
