@@ -1,9 +1,7 @@
 const bodyEl = document.querySelector("body");
 
 const base = location.pathname.includes("/Pages/") ? "../" : "./";
-console.log(base)
 const navbarPath = `${base}Pages/Components/navbar.html`;
-console.log(navbarPath)
 
 const navbarhtml = fetch(navbarPath)
     .then((response) =>{

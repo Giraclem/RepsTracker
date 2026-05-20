@@ -25,6 +25,7 @@ if (panelNavEl) panelNavEl.forEach((btn) => {
     })
 })
 
+// Used to auto-save currSession and currExercise
 const enableSaveOnUnload = (object) =>{
     addEventListener("beforeunload", ()=>{
         object.save();
@@ -40,7 +41,7 @@ const sessionMode = Boolean(currSession.current);
 
 if (sessionMode) {
     currExercise = currSession.current.exercise;
-    enableSaveOnUnload(currSession);
+    enableSaveOnUnload(currSession); //Allow to save on unload (safety net)
 } else {
     /* solo exercise */
     currExercise = JSON.parse(sessionStorage.getItem("currExercise"));
@@ -51,6 +52,18 @@ if (sessionMode) {
             sessionStorage.removeItem("currExercise");
         }
     })
+}
+
+// Showing previous series from history
+const tableContainerEl = document.querySelector(".previous_series");
+if (currExercise) {
+    const prev_series = {series : pastSessionHistory.getNthLastSeries(currExercise.id,5)};
+    if (prev_series.series.length){
+        const tableEl = createSeriesTable(prev_series);
+        tableContainerEl.appendChild(tableEl);
+    } else {
+        tableContainerEl.classList.add("hidden");
+    }
 }
 
 // Updating UI with current exercise information
@@ -181,6 +194,8 @@ const finishExercise = () =>{
     finishSerie();
     if(sessionMode){
         currSession.finish_exercise();
+        console.log("SAVING AFTER EXERCISE", currSession)
+        currSession.save();
         window.location.href = "session.html"
     } else {
         sessionStorage.removeItem("currExercise");
@@ -195,6 +210,13 @@ const showRecup = (recupTime) => {
 
 const launchRecup = () =>{
     currExercise["recup"] = {isStarted : true , startTime : Date.now()};
+    if (sessionMode){
+        console.log(currExercise === currSession.current.exercise);
+        console.log(currExercise.recup);
+        console.log(currSession.current.exercise.recup);
+        console.log("SAVING BEFORE RECUP", currSession)
+        currSession.save();
+    }
     showRecup(currExercise.recup_time);
 }
 
@@ -202,6 +224,10 @@ const stopRecup = () => {
     clearInterval(intervalId); //Stop the timer
     finishSerie();
     currExercise["recup"] = {isStarted : false , startTime : null};
+    if (sessionMode){
+        console.log("SAVING AFTER RECUP", currSession)
+        currSession.save();
+    }
     hideTimer();
     updateExerciseUi(currExercise);
 }
@@ -227,18 +253,6 @@ skipTimerBtnEl.addEventListener("click", ()=>{
     }
 })
 
-
-/* Execution */
+console.log("ON-LOAD" , currSession)
 updateExerciseInformation(currExercise);
 if (currExercise) updateExerciseUi(currExercise);
-
-const tableContainerEl = document.querySelector(".previous_series");
-if (currExercise) {
-    const prev_series = {series : pastSessionHistory.getNthLastSeries(currExercise.id,5)};
-    if (prev_series.series.length){
-        const tableEl = createSeriesTable(prev_series);
-        tableContainerEl.appendChild(tableEl);
-    } else {
-        tableContainerEl.classList.add("hidden");
-    }
-}

@@ -89,6 +89,12 @@ export class CurrentSession{
         }
     }
 
+    // When we need to just consult data
+    read(){
+        const storedValue = JSON.parse(sessionStorage.getItem("currSession"));
+        return storedValue
+    }
+
     select(poolId, exerciseId){ // Optimize seach with binary search
         // Find the right pool
         for (const pool of this.pools){
