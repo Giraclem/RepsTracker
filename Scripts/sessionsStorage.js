@@ -79,11 +79,12 @@ export class CurrentSession{
     }
 
     save(){
-        sessionStorage.setItem("currSession",JSON.stringify(this));
+        // We save in localestorage because ios delete sessionStorage/or refresh the page after spending time out of the page
+        localStorage.setItem("currSession",JSON.stringify(this));
     }
 
     load(){
-        const storedValue = JSON.parse(sessionStorage.getItem("currSession"));
+        const storedValue = JSON.parse(localStorage.getItem("currSession"));
         for (const prop in storedValue){
             this[prop] = storedValue[prop];
         }
