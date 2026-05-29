@@ -19,13 +19,13 @@ const startExercise = (ex) => {
 
 const containerEl = document.querySelector(".list_container");
 
-const createBtnEl = (btn_class, btn_icon, btn_action) => {
+const createBtnEl = (btn_class, icon_class, btn_icon, btn_action) => {
 
     const btnEl = document.createElement("button");
-    btnEl.classList.add("edit_btn");
+    btnEl.classList.add(btn_class);
     
     const iconImgEl = document.createElement("img");
-    iconImgEl.classList.add(btn_class);
+    iconImgEl.classList.add(icon_class);
     iconImgEl.src=btn_icon;
     btnEl.append(iconImgEl);
 
@@ -44,6 +44,7 @@ const createExTbBtmEl = (contEl, ex) => {
     h1El.textContent = ex.name;
     
     const editBtnEl = createBtnEl(
+        "edit_btn",
         "icon",
         "../Image/edit.png",
         (e)=>{
@@ -56,6 +57,7 @@ const createExTbBtmEl = (contEl, ex) => {
     );
 
     const deleteBtnEl = createBtnEl(
+        "delete_btn",
         "icon",
         "../Image/delete.png",
         (e)=>{
@@ -70,18 +72,36 @@ const createExTbBtmEl = (contEl, ex) => {
     );
 
     const goDownBtnEl = createBtnEl(
+        "down_btn",
         "icon",
         "../Image/down.png",
         (e)=>{
-            exerciseList.swap(ex.id,"default_ex_15")
             e.preventDefault();
             e.stopPropagation();
+            exerciseList.swap_with_next(ex.id);
             displayExList(contEl);
         }
     );
 
+    const goUpBtnEl = createBtnEl(
+        "up_btn",
+        "icon",
+        "../Image/up.png",
+        (e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            exerciseList.swap_with_previous(ex.id);
+            displayExList(contEl);
+        }
+    );
+
+    const move_btn_cont_El = document.createElement("div");
+    move_btn_cont_El.classList.add("move_btn_cont");
+    if (exerciseList.getIndex(ex.id)!=0) move_btn_cont_El.appendChild(goUpBtnEl);
+    if (exerciseList.getIndex(ex.id)!=exerciseList.length-1) move_btn_cont_El.appendChild(goDownBtnEl);
+
     thumbnailBtm.appendChild(h1El);
-    thumbnailBtm.appendChild(goDownBtnEl);
+    thumbnailBtm.appendChild(move_btn_cont_El);
     thumbnailBtm.appendChild(editBtnEl);
     thumbnailBtm.appendChild(deleteBtnEl);
 

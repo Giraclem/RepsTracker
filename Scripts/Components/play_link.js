@@ -7,7 +7,7 @@ const playAnchorEl = document.querySelector("#play_btn a");
 const playLiEl = document.querySelector("#play_btn");
 
 const getPlayhref = () =>{
-    if (storedCurrentSession.current){
+    if (storedCurrentSession && storedCurrentSession.current){
         if(storedCurrentSession.current.exercise) {
             return `${base}Pages/exercise.html`;
         } else {

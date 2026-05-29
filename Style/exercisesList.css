@@ -43,7 +43,7 @@
     font-size: 1.5rem;
 }
 
-.edit_btn {
+.edit_btn, .delete_btn, .up_btn, .down_btn {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -54,28 +54,15 @@
     align-items: center;
 }
 
-.edit_btn:active {
+.edit_btn:active, .delete_btn:active,  .up_btn:active, .down_btn:active{
     background-color: var(--primary-color);
 }
 
-.edit_btn img{
+.edit_btn img, .delete_btn img, .up_btn img, .down_btn img{
     width:75%;
 }
 
-.delete_btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    border:none;
-    background-color: var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.delete_btn img{
-    width:75%;
-}
-
-.delete_btn:active {
-    background-color: var(--primary-color);
+.up_btn, .down_btn{
+    width:25px;
+    height: 25px;
 }

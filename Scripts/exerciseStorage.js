@@ -1,7 +1,8 @@
 class ExerciseList{
 
     constructor(){
-        this.list = []
+        this.list = [];
+        this.length = 0;
     }
 
     get(exerciseId){
@@ -12,6 +13,7 @@ class ExerciseList{
         const list = JSON.parse(localStorage.getItem("exerciseList"))
         if(list){
             this.list = list;
+            this.length = this.list.length;
         }
     }
 
@@ -21,10 +23,12 @@ class ExerciseList{
 
     add(exercise){
         this.list.push(exercise);
+        this.length+=1;
     }
 
     remove(exercise){
         this.list = this.list.filter((ex)=>ex.id!=exercise.id);
+        this.length-=1;
     }
 
     getIndex(ex_id){
@@ -38,18 +42,34 @@ class ExerciseList{
         this.list[this.getIndex(id)] = new_ex;  
     }
 
-    swap(ex_id1, ex_id2){
-        const ex1 = this.get(ex_id1);
-        const idx1 = this.getIndex(ex_id1);
-        const ex2 = this.get(ex_id2);
-        const idx2 = this.getIndex(ex_id2);
+    swap_with_next(ex_id){
+        const ex = this.get(ex_id);
+        const idx = this.getIndex(ex_id);
 
-        if (idx1 == -1 || idx2 == -1){
-            return
-        }
-        
-        this.list[idx2] = ex1;
-        this.list[idx1] = ex2;
+        if (idx == -1) return 
+
+        const idx2 = idx + 1;
+
+        if (idx2 >= this.list.length) return
+
+        this.list[idx] = this.list[idx2];
+        this.list[idx2] = ex;
+    }
+
+    swap_with_previous(ex_id){
+
+        const ex = this.get(ex_id);
+        const idx = this.getIndex(ex_id);
+
+        console.log(idx)
+        if (idx == -1) return
+
+        const idx2 = idx - 1;
+        console.log(idx2)
+        if (idx2 < 0) return
+
+        this.list[idx] = this.list[idx2];
+        this.list[idx2] = ex;
     }
 
 }
@@ -57,7 +77,7 @@ class ExerciseList{
 export const exerciseList = new ExerciseList();
 
 export const exLimitsValue = {
-    nameLength : {min : 0 ,  max: 20},
+    nameLength : {min : 0 ,  max: 40},
     series : {min : 0 ,  max: 999},
     repetitions : {min : 0 ,  max: 999},
     weight : {min : 0 ,  max: 999},
