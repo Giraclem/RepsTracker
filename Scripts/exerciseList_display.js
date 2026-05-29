@@ -6,6 +6,8 @@ import {displayErrorBox} from "../Scripts/Utilities/popup.js"
 currSession.load();
 exerciseList.load();
 
+let scrollPos = window.scrollY;
+
 const startExercise = (ex) => {
     if (currSession.id){
         displayErrorBox("Stop the current session before playing an exercise!");
@@ -79,6 +81,7 @@ const createExTbBtmEl = (contEl, ex) => {
             e.preventDefault();
             e.stopPropagation();
             exerciseList.swap_with_next(ex.id);
+            scrollPos = window.scrollY;
             displayExList(contEl);
         }
     );
@@ -134,7 +137,7 @@ const createExTbEl = (contEl, ex) => {
 
 }
 
-const  displayExList = (contEl) => {
+const  displayExList = async (contEl) => {
 
     contEl.innerHTML ="";
     if (!exerciseList.list.length){
@@ -146,8 +149,17 @@ const  displayExList = (contEl) => {
 
     exerciseList.list.forEach(ex => {
         const exTbEl = createExTbEl(contEl,ex);
+        exTbEl.classList.add("hidden"); //Hiding elements for firing animation when display will be set to grid
         contEl.appendChild(exTbEl);
     });
+
+    // Start animation
+    for (const node of contEl.childNodes){
+        node.classList.add("show");
+    }
+
+    // Get back to the position
+    window.scrollTo(0, scrollPos);
 
 }
 

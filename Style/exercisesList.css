@@ -10,6 +10,22 @@
     margin-bottom: 20px;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.exercise_thumbnail.hidden{
+    display: none;
+    opacity:0;
+}
+
+.exercise_thumbnail.show{
+    display: block;
+    opacity:1;
+    animation: fadeIn 0.5s forwards;
+}
+
 .exercise_thumbnail a{
     text-decoration: none;
     height: 100%;

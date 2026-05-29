@@ -155,6 +155,10 @@ a:active{
      display:none !important; 
 }
 
+.show {
+     display:block !important;
+}
+
 /* Error box */
 
 .popup_container{

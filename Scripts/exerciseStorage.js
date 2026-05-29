@@ -61,11 +61,9 @@ class ExerciseList{
         const ex = this.get(ex_id);
         const idx = this.getIndex(ex_id);
 
-        console.log(idx)
         if (idx == -1) return
 
         const idx2 = idx - 1;
-        console.log(idx2)
         if (idx2 < 0) return
 
         this.list[idx] = this.list[idx2];
