@@ -105,6 +105,75 @@ export const loadDefaultSessions = () => {
         sessionsList.add(session);
         sessionsList.save();
 
+        pools = [
+        { 
+            name: "Warm-up", 
+            ids: [
+            "default_ex_38",
+            ] 
+        },
+        { 
+            name: "Quadriceps",
+            ids: [
+                "default_ex_39"
+            ] 
+        },
+        { 
+            name: "Mollets",
+            ids: [
+            "default_ex_40"
+            ] 
+        },
+        { 
+            name: "Tronc", 
+            ids: [
+            "default_ex_41"
+            ] 
+        },
+        { 
+            name: "Isio", 
+            ids: [
+            "default_ex_42" // Extension triceps poulie
+            ] 
+        },
+        { 
+            name: "Abductors", 
+            ids: [
+            "default_ex_43"
+            ] 
+        },
+        {
+            name: "Upper body",
+            ids: [
+            "default_ex_44",
+            "default_ex_24",
+            "default_ex_1"
+            ]
+        }
+        ];
+        
+        session = new Session;
+        
+        session.id = "default_session_2";
+        session.name = "Renforcement course à pied";
+        session.categories = ["Course à pied", "Lower body"];
+        session.img_src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSafIAQCgXlUFnlphfJyJD6WtxtAklTjBf4b6g-TQfQa8tCe1Vt0aMfpz8&s=10"
+        
+        for (const p of pools){
+            const pool = new ExercisePool(p.name);
+            for (const exId of p.ids){
+                const ex = exerciseList.get(exId);
+                if (ex){
+                    pool.add(exerciseList.get(exId));
+                } else {
+                    console.warn(`Exercise with id ${exId} does not exists!`);
+                }
+            }
+            session.add(pool);
+        }
+        
+        sessionsList.add(session);
+        sessionsList.save();
 
         return true
 
